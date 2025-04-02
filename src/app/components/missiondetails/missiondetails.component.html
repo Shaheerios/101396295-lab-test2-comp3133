@@ -1,0 +1,23 @@
+<ng-container *ngIf="mission">
+    <mat-card>
+      <mat-card-header>
+        <img mat-card-avatar [src]="mission?.links?.mission_patch_small" />
+        <mat-card-title>{{ mission?.mission_name }}</mat-card-title>
+        <mat-card-subtitle>Year: {{ mission?.launch_year }}</mat-card-subtitle>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <p><strong>Details:</strong> {{ mission?.details || 'No details available.' }}</p>
+        <p><strong>Rocket:</strong> {{ mission?.rocket?.rocket_name }} ({{ mission?.rocket?.rocket_type }})</p>
+        <ul>
+          <li><a [href]="mission?.links?.article_link" target="_blank">Article</a></li>
+          <li><a [href]="mission?.links?.wikipedia" target="_blank">Wikipedia</a></li>
+          <li><a [href]="mission?.links?.video_link" target="_blank">Video</a></li>
+        </ul>
+      </mat-card-content>
+  
+      <mat-card-actions>
+        <a mat-button routerLink="/">Back to Missions</a>
+      </mat-card-actions>
+    </mat-card>
+  </ng-container>  
